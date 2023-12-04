@@ -1,6 +1,6 @@
 ﻿using System;
 
-(int hp, string name) = (50, "bricks");
+// (int hp, string name) = (50, "bricks");
 
 int Princesshp = 100;
 
@@ -29,22 +29,33 @@ else {
 
 string choice1 = Console.ReadLine().ToLower();
 
-static void ContinueWait(string choice1)
+static void ContinueWait(string choice1, int princesshp, string name1)
+
+Console.WriteLine("You continue to wait for someone to rescue you, getting on your knees and clasping your hands together, hoping whatever divine entity out there has mercy on you. Hours turn into days, days into weeks. You seriously begin to wonder if you'll ever leave before you turn to a pile of bones.. In reality, its only been about 30 minutes, but its enough to make you rise to your feet again. You first notice the big metal door blocking your way down into the stairscase of the tower. Its large and imposing, making you feel like an ant compared to its great height and width. You look around the room and notice the cracks in the stone walls of your encloseure, making you wonder if you could somehow break through them and jump down. You'd always assumed that you were high up. but you had no way of knowing, as the only window was on the ceiling, letting the occasional sunlight shine through. What will you do?");
 {
     if (choice1 == "a")
     {
-        Console.WriteLine("You continue to wait for someone to rescue you, getting on your knees and clasping your hands together, hoping whatever divine entity out there has mercy on you. Hours turn into days, days into weeks. You seriously begin to wonder if you'll ever leave before you turn to a pile of bones.. In reality, its only been about 30 minutes, but its enough to make you rise to your feet again. You first notice the big metal door blocking your way down into the stairscase of the tower. Its large and imposing, making you feel like an ant compared to its great height and width. You look around the room and notice the cracks in the stone walls of your encloseure, making you wonder if you could somehow break through them and jump down. You'd always assumed that you were high up. but you had no way of knowing, as the only window was on the ceiling, letting the occasional sunlight shine through. What will you do?");
         Console.WriteLine("a. Try to break down the door");
         Console.WriteLine("b. Climb to the window on the ceiling");
         Console.WriteLine("c. Find a weakness and try to break the stone walls");
 
         string choice2 = Console.ReadLine().ToLower();
-        if (choice2 == "a")
-        {
-            Console.WriteLine("");
-            Console.WriteLine("");
 
-        }   
+        static extern void breakdoor(string choice2, int Princesshp);
+        {
+            if (choice2 == "a")
+            {
+                int bruise = 10;
+                Princesshp =- bruise;
+                
+                Console.WriteLine("You look up at the imposing door in front of you, gulping as you approach. You hadn't really thought through exactly what to do to break down a literal metal door, but you figured enough brute force could solve the problem. Spoken like a true heroine! You prepare to strike against the door by facing the door with your right side. With conviction and determination, you slam against the metal door with the side of your arm, a loud THUD echoing through the tower. An aching pain shoots through shoulder, making you slide down to the floor. You pull up your sleeves to heck the damage, and you can already see a bruise forming.");
+                Console.WriteLine("Princess " + name1 + " has taken 10 damage!");
+                Console.WriteLine("Remaining hp:" + Princesshp);
+                Console.WriteLine("You get back up on your feet, gently rubbing your shoulder to soothe the pain. You take another look around, realizing you just wasted time for no reason. How fun. The same options are at your disposal, what will you do now?");
+
+                Console.WriteLine(ContinueWait);
+            } 
+        }  
     }
 
 }    
@@ -57,12 +68,12 @@ if (choice1 == "b")
         Console.WriteLine("Princess " + name1 + " has " + Princesshp + " hp left!");
         Console.WriteLine("You crawl out of the window, hurt, but determined. Climbing out, you discover the ");
 
-        Princesshp = Princesshp - glass;
+        Princesshp =- glass;
 
         Console.ReadLine();
     }
 
-if (choice1 == "b")
+if (choice1 == "c")
 {
     Console.WriteLine("");
     
@@ -71,7 +82,7 @@ if (choice1 == "b")
 
 else
 {
-    Console.WriteLine()
+    Console.WriteLine();
 }
 
-ContinueWait(choice1);
+ContinueWait(choice1, Princesshp, name1);
