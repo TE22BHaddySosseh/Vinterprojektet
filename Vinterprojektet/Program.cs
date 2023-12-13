@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Reflection;
 
 // (int hp, string name) = (50, "bricks");
@@ -40,9 +41,7 @@ static void ContinueWait(string choice1, int princesshp, string name1)
         Console.WriteLine("b. Climb to the window on the ceiling");
         Console.WriteLine("c. Find a weakness and try to break the stone walls");
 
-        string choice2 = Console.ReadLine().ToLower();
-
-        princesshp = breakdoor(choice2, princesshp, name1);
+        princesshp = breakdoor(choice1, princesshp, name1);
     }
 
     if (choice1 == "b")
@@ -52,11 +51,11 @@ static void ContinueWait(string choice1, int princesshp, string name1)
         Console.WriteLine("b. Climb to the window on the ceiling");
         Console.WriteLine("c. Find a weakness and try to break the stone walls");
 
-        string choice2 = Console.ReadLine().ToLower();
-
-        princesshp = breakdoor(choice2, princesshp, name1);
+        princesshp = breakdoor(choice1, princesshp, name1);
     }
 }
+
+string choice2 = Console.ReadLine().ToLower();
 
 if (choice2 == "b")
 {
@@ -79,7 +78,8 @@ if (choice2 == "b")
 
     if (choice3a == "b")
     {
-        Console.WriteLine("You take the rope down for your own safety, and you end up making it down just fine. ");
+        Console.WriteLine("You take the rope down for your own safety, and you end up making it down just fine. Once on your feet, you reluctantly walk into the dark forest surrounding the tower. On your way, you find various apples hanging from tree, fresh and untouched, practicaly calling your name. You grab three and same them for later, as you wish to eat them in a more friendly environment. As you walk through the forrest, you feel a dark presence following you. You try to shake off the horrible feeling, but you eventually turn around, face to face with a dragon. It stands over you, its stature haunting and aura threatening, you have no choice but to fight if you want to live.");
+        Console.WriteLine("Entering Battle!");
     }
 }
 
@@ -103,11 +103,12 @@ if (choice2 == "c")
     }
 }
 
+
 // ---------------- Methods ---------------------
 
 static int fallorsafe(int Princesshp, string name1)
 {
-    Random random = new Random();
+    Random random = new();
 
     int fate = random.Next(2);
 
@@ -148,4 +149,35 @@ static int breakdoor(string choice2, int Princesshp, string name1)
         Console.WriteLine(ContinueWait);
     }
     return Princesshp;
+}
+
+class Battle
+{
+    static void Game()
+    {
+        int Dragonhp = 200;
+        int magicapples = 5;
+
+        Console.WriteLine("Dragon prepares itself to fight againt you, flapping its gorgeous wings with all its might. It seems its waiting for you to strike first.");
+
+        while (Princesshp > 0 && Dragonhp > 0)
+        {
+            Console.WriteLine("What will you do, Princess " + name1 + "?");
+            Console.WriteLine("a. Throw your crown");
+            Console.WriteLine("b. Kick");
+            Console.WriteLine("c. Punch");
+            Console.WriteLine("d. Heal");
+            Console.WriteLine("e. Run away");
+
+            string input = Console.ReadLine().ToLower();
+
+            switch (input)
+            {
+                case "a"
+                {
+                    int crowndamage = Caldmg()
+                }
+            }
+        }
+    }
 }
