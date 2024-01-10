@@ -1,8 +1,8 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Globalization;
 using System.Reflection;
-
-// (int hp, string name) = (50, "bricks");
+using System.Runtime.InteropServices;
 
 int Princesshp = 100;
 
@@ -153,10 +153,10 @@ static int breakdoor(string choice2, int Princesshp, string name1)
 
 class Battle
 {
-    static void Game()
+    static void Game(int Princesshp, string name1)
     {
         int Dragonhp = 200;
-        int magicapples = 5;
+        int availableapples = 4;
 
         Console.WriteLine("Dragon prepares itself to fight againt you, flapping its gorgeous wings with all its might. It seems its waiting for you to strike first.");
 
@@ -167,16 +167,43 @@ class Battle
             Console.WriteLine("b. Kick");
             Console.WriteLine("c. Punch");
             Console.WriteLine("d. Heal");
-            Console.WriteLine("e. Run away");
 
             string input = Console.ReadLine().ToLower();
 
             switch (input)
             {
-                case "a"
-                {
-                    int crowndamage = Caldmg()
-                }
+                case "a":
+                    Random crowndmg = new Random();
+                    int crowndamage = crowndmg.Next(5, 20);
+                    Dragonhp -= crowndamage;
+                    Console.WriteLine("You threw your crown at the savage beast, the sharp points piercing it's skin with ease.");
+                    Console.WriteLine("Princess" + name1 + " did " + crowndamage + " damage!");
+                    break;
+                case "b":
+                    Random kickdmg = new Random();
+                    int kickdamage = kickdmg.Next(5, 20);
+                    Dragonhp -= kickdamage;
+                    Console.WriteLine("You ran at full speed towards the beast, kicking it as hard as you could in any sensitive area you could reach.");
+                    Console.WriteLine("Princess" + name1 + " did " + kickdamage + " damage!");
+                    break;
+                case "c":
+                    Random punchdmg = new Random();
+                    int punchdamage = punchdmg.Next(10, 30);
+                    Dragonhp -= punchdamage;
+                    Console.WriteLine("You ran at the beast, raising your fist in the air and preparing for impact before unleashing an unmerciful punch.");
+                    Console.WriteLine("Princess" + name1 + " did " + punchdamage + " damage!");
+                    break;
+                case "d":
+                    Random heal = new Random();
+                    int princessheal = heal.Next(5,10);
+                    Princesshp += princessheal;
+                    availableapples--;
+                    Console.WriteLine("You grab one of the fresh red apples you picked earlier, chewing through it lack a mad man to restore your energy.");
+                    Console.WriteLine("Princess " + name1 + " ate an apple and healed herself!");
+                    break;
+
+
+                
             }
         }
     }
