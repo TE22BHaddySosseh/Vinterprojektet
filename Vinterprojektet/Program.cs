@@ -32,28 +32,7 @@ else
 
 string choice1 = Console.ReadLine().ToLower();
 
-static void ContinueWait(string choice1, int princesshp, string name1)
-{
-    if (choice1 == "a")
-    {
-        Console.WriteLine("You continue to wait for someone to rescue you, getting on your knees and clasping your hands together, hoping whatever divine entity out there has mercy on you. Hours turn into days, days into weeks. You seriously begin to wonder if you'll ever leave before you turn to a pile of bones.. In reality, its only been about 30 minutes, but its enough to make you rise to your feet again. You first notice the big metal door blocking your way down into the stairscase of the tower. Its large and imposing, making you feel like an ant compared to its great height and width. You look around the room and notice the cracks in the stone walls of your encloseure, making you wonder if you could somehow break through them and jump down. You'd always assumed that you were high up. but you had no way of knowing, as the only window was on the ceiling, letting the occasional sunlight shine through. What will you do?");
-        Console.WriteLine("a. Try to break down the door");
-        Console.WriteLine("b. Climb to the window on the ceiling");
-        Console.WriteLine("c. Find a weakness and try to break the stone walls");
-
-        princesshp = breakdoor(choice1, princesshp, name1);
-    }
-
-    if (choice1 == "b")
-    {
-        Console.WriteLine("Determined to find a way out on your own, you rise to your feet and frantically look around the room.  You first notice the big metal door blocking your way down into the stairscase of the tower. Its large and imposing, making you feel like an ant compared to its great height and width. You look around the room and notice the cracks in the stone walls of your encloseure, making you wonder if you could somehow break through them and jump down. You'd always assumed that you were high up. but you had no way of knowing, as the only window was on the ceiling, letting the occasional sunlight shine through. What will you do?");
-        Console.WriteLine("a. Try to break down the door");
-        Console.WriteLine("b. Climb to the window on the ceiling");
-        Console.WriteLine("c. Find a weakness and try to break the stone walls");
-
-        princesshp = breakdoor(choice1, princesshp, name1);
-    }
-}
+ ContinueWait(choice1, Princesshp, name1);
 
 string choice2 = Console.ReadLine().ToLower();
 
@@ -105,6 +84,29 @@ if (choice2 == "c")
 
 
 // ---------------- Methods ---------------------
+
+static void ContinueWait(string choice1, int princesshp, string name1)
+{
+    if (choice1 == "a")
+    {
+        Console.WriteLine("You continue to wait for someone to rescue you, getting on your knees and clasping your hands together, hoping whatever divine entity out there has mercy on you. Hours turn into days, days into weeks. You seriously begin to wonder if you'll ever leave before you turn to a pile of bones.. In reality, its only been about 30 minutes, but its enough to make you rise to your feet again. You first notice the big metal door blocking your way down into the stairscase of the tower. Its large and imposing, making you feel like an ant compared to its great height and width. You look around the room and notice the cracks in the stone walls of your encloseure, making you wonder if you could somehow break through them and jump down. You'd always assumed that you were high up. but you had no way of knowing, as the only window was on the ceiling, letting the occasional sunlight shine through. What will you do?");
+        Console.WriteLine("a. Try to break down the door");
+        Console.WriteLine("b. Climb to the window on the ceiling");
+        Console.WriteLine("c. Find a weakness and try to break the stone walls");
+
+        princesshp = breakdoor(choice1, princesshp, name1);
+    }
+
+    if (choice1 == "b")
+    {
+        Console.WriteLine("Determined to find a way out on your own, you rise to your feet and frantically look around the room.  You first notice the big metal door blocking your way down into the stairscase of the tower. Its large and imposing, making you feel like an ant compared to its great height and width. You look around the room and notice the cracks in the stone walls of your encloseure, making you wonder if you could somehow break through them and jump down. You'd always assumed that you were high up. but you had no way of knowing, as the only window was on the ceiling, letting the occasional sunlight shine through. What will you do?");
+        Console.WriteLine("a. Try to break down the door");
+        Console.WriteLine("b. Climb to the window on the ceiling");
+        Console.WriteLine("c. Find a weakness and try to break the stone walls");
+
+        princesshp = breakdoor(choice1, princesshp, name1);
+    }
+}
 
 static int fallorsafe(int Princesshp, string name1)
 {
