@@ -36,6 +36,11 @@ string choice1 = Console.ReadLine().ToLower();
 
 string choice2 = Console.ReadLine().ToLower();
 
+if (choice2 == "a")
+{
+    breakdoor(choice2, Princesshp, name1);
+}
+
 if (choice2 == "b")
 {
     int glass = 5;
@@ -138,8 +143,6 @@ static int fallorsafe(int Princesshp, string name1)
 
 static int breakdoor(string choice2, int Princesshp, string name1)
 {
-    if (choice2 == "a")
-    {
         int bruise = 10;
         Princesshp -= bruise;
 
@@ -149,7 +152,6 @@ static int breakdoor(string choice2, int Princesshp, string name1)
         Console.WriteLine("You get back up on your feet, gently rubbing your shoulder to soothe the pain. You take another look around, realizing you just wasted time for no reason. How fun. The same options are at your disposal, what will you do now?");
 
         Console.WriteLine(ContinueWait);
-    }
     return Princesshp;
 }
 
