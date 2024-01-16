@@ -82,13 +82,13 @@ if (choice2 == "c")
 
     if (choice3b == "a")
     {
-        Console.WriteLine(fallorsafe);
+        Console.WriteLine(Methods.fallorsafe(Princesshp, name1));
     }
 }
 
 
 // ---------------- Methods ---------------------
-internal class Program
+internal partial class Program
 {
     private static void Main(string[] args)
     {
