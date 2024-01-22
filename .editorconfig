@@ -2,3 +2,6 @@
 
 # IDE0210: Convert to top-level statements
 csharp_style_prefer_top_level_statements = true
+
+# IDE0055: Fix formatting
+dotnet_diagnostic.IDE0055.severity = none

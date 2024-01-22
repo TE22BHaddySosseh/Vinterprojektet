@@ -31,13 +31,13 @@ else
 
 string choice1 = Console.ReadLine().ToLower();
 
- ContinueWait(choice1, Princesshp, name1);
+    Console.WriteLine(Methods.ContinueWait(choice1, Princesshp, name1));
 
 string choice2 = Console.ReadLine().ToLower();
 
 if (choice2 == "a")
 {
-    breakdoor(choice2, Princesshp, name1);
+    Console.WriteLine(Methods.breakdoor(choice2, Princesshp, name1));
 }
 
 if (choice2 == "b")
@@ -56,7 +56,7 @@ if (choice2 == "b")
 
     if (choice3a == "a")
     {
-        Console.WriteLine(fallorsafe);
+        Console.WriteLine(Methods.fallorsafe(Princesshp, name1));
     }
 
     if (choice3a == "b")
@@ -74,15 +74,15 @@ if (choice2 == "c")
 
     string choice3b = Console.ReadLine().ToLower();
 
+    if (choice3b == "a")
+    {
+        Console.WriteLine(Methods.fallorsafe(Princesshp, name1));
+    }
+
     if (choice3b == "b")
     {
         Console.WriteLine("You carefully grip onto the coarse rocks of the tower, slowly using both your hands and feet to carefully make it down to the tower safely. All you do is make sure not to look down. Once on your feet, you reluctantly walk into the dark forest surrounding the tower. On your way, you find various apples hanging from tree, fresh and untouched, practicaly calling your name. You grab three and same them for later, as you wish to eat them in a more friendly environment. As you walk through the forrest, you feel a dark presence following you. You try to shake off the horrible feeling, but you eventually turn around, face to face with a dragon. It stands over you, its stature haunting and aura threatening, you have no choice but to fight if you want to live.");
         Console.WriteLine("Entering Battle!");
-    }
-
-    if (choice3b == "a")
-    {
-        Console.WriteLine(Methods.fallorsafe(Princesshp, name1));
     }
 }
 
