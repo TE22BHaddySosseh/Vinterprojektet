@@ -1,8 +1,4 @@
 ﻿using System;
-using System.ComponentModel;
-using System.Globalization;
-using System.Reflection;
-using System.Runtime.InteropServices;
 
 int Princesshp = 100;
 
@@ -87,13 +83,16 @@ if (choice2 == "c")
 }
 
 
-// ---------------- Methods ---------------------
-internal partial class Program
+// ---------------- Battle ---------------------
+
+internal partial class Battle
 {
-    private static void Main(string[] args)
+    public static void Main(string[] args)
     {
+        string name1 = "";
+        int Princesshp = 100;
 
-        Methods.Rungame();
-
+        Methods.Game(Princesshp, name1);
     }
-}
+    
+}   
